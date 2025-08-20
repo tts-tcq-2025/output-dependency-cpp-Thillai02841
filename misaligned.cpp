@@ -15,6 +15,15 @@ int printColorMap() {
 
 void testPrintColorMap() {
     std::cout << "\nPrint color map test\n"; 
+    // Strengthened tests
+    std::string expectedFirst = "1 | White | Blue";
+    std::string expectedSecond = "2 | White | Orange";
+    std::string expectedLast = "25 | Violet | Slate";
+
+    // These will FAIL with the buggy implementation
+    assert(formatColorPair(1, "White", "Blue") == expectedFirst);
+    assert(formatColorPair(2, "White", "Orange") == expectedSecond);
+    assert(formatColorPair(25, "Violet", "Slate") == expectedLast);
     int result = printColorMap();
     assert(result == 25);
     std::cout << "All is well (maybe!)\n";
